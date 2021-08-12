@@ -20,6 +20,12 @@ let coordY = '';
 
 let answer = [];
 
+let culm = $('#culminate');
+
+let rise = $('#rise');
+
+let set = $('#set');
+
 
 function addressChange() {
     console.log('yes')
@@ -60,9 +66,14 @@ function fetching() {
                 // for(i = 0; i < options2.length; i++) {
                 //     answer.push(options2[i]);
                 // }
-                // console.log(answer[0])
+                console.log(options2[0].culmination.utc_datetime)
+                console.log(options2[0].rise.utc_datetime)
+                console.log(options2[0].set.utc_datetime)
+                culm.html(`<h3>Culmination: ${options2[0].culmination.utc_datetime}</h3>`)
+                rise.html(`<h3>Rise: ${options2[0].rise.utc_datetime}</h3>`)
+                set.html(`<h3>Set: ${options2[0].set.utc_datetime}</h3>`)
                 // alert(answer[0])
-                window.location.href = (`https://satellites.fly.dev/passes/25544?lat=${coordY.toString().substr(0,5)}&lon=${coordX.toString().substr(0,6)}&limit=1&days=15&visible_only=true`)
+                // window.location.href = (`https://satellites.fly.dev/passes/25544?lat=${coordY.toString().substr(0,5)}&lon=${coordX.toString().substr(0,6)}&limit=1&days=15&visible_only=true`)
             })
         })
     }
